@@ -8,7 +8,7 @@ root = tk.Tk()
 root.title("Mesajlaşma Uygulaması")
 
 # Pencere boyutu ayarlama
-root.geometry("400x400")
+root.geometry("600x400")
 
 # Mesaj girişi alanı
 entry = tk.Entry(root, width=50)
@@ -81,10 +81,16 @@ def process_words(message):
 # Tahmin işlevi
 def predict_word(event):
     input_text = entry.get()
-    if len(input_text) < 3:
+    words = input_text.split()
+    if not words:
         suggestion_label.config(text="")
         return
     
+    last_word = words[-1]
+    if len(last_word) < 3:
+        suggestion_label.config(text="")
+        return
+
     try:
         with open("word_counts.txt", "r") as file:
             lines = file.readlines()
@@ -93,10 +99,10 @@ def predict_word(event):
     except FileNotFoundError:
         word_counts = Counter()
     
-    predictions = [word for word in word_counts if word.startswith(input_text.lower())]
+    predictions = [word for word in word_counts if word.startswith(last_word.lower())]
     if predictions:
         best_prediction = max(predictions, key=lambda x: word_counts[x])
-        suggestion = best_prediction[len(input_text):]
+        suggestion = best_prediction[len(last_word):]
         suggestion_label.config(text=suggestion)
     else:
         suggestion_label.config(text="")

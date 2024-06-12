@@ -1,3 +1,5 @@
 You: merhaba, ne kadar güzel bir gün
 You: Gerçekten de güzel bir gün gibi duruyor, deðil mi
 You: Merhaba, ne kadar güzel bir gün deðil mi
+You: merhaba, ne kadar güzel bir gün deðil mi, gerçekten de güzel bir gün gibi sanki ama bir kaç eksiði var.
+You: Güzaydýn diye bir kelime olsaydý keþke
