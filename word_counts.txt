@@ -1,0 +1,9 @@
+merhaba: 2
+kadar: 2
+güzel: 3
+bir: 3
+gün: 3
+gerçekten: 1
+gibi: 1
+duruyor: 1
+deðil: 2
